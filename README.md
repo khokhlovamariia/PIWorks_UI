@@ -1,0 +1,30 @@
+
+
+# User interface specification document 
+
+## Start Screen
+Two main components:
+1. **Header**
+	* container with one button (New User) and one checkbox (Hide Disabled User)
+2. **Table** 
+	* Contains data from the User database (ID, User Name, Email and Enabled columns)
+
+	* Filter buttons in the header of the table. Two-sided order arrows (buttons) for each column except one-sided for ID
+
+## Input form “New User”
+Displays next to the table if the “New User” button is pressed. Contains:
+1. **Title** “New User”
+2. **Text fields**: Username, Display Name, Phone, Email
+3. **Dropdown list** “User Roles”
+4. **Checkbox** “Enabled”
+
+## Input Components and their behavior
+| Type        | Text           | Behavior  |
+|:-------------:|:-------------:| :-----:|
+| Checkbox      | Hide Disabled User | If option is selected, table displays only rows, where Enabled equals “true”. |
+| Checkbox      | Enabled      |   If option is selected, then the new row in the User database will contain “true” in the column “Enabled” after clicking “Save User” button. |
+| Dropdown list | User Roles      |    If user clicks on the field with the text “Select user roles…”, he gets 3 options to select:  Guest, Admin, SuperAdmin. |
+| Button | New User      |    The button has an icon “plus” right to the text. If user clicks the button, the new input form “New User” displays. |
+| Button | Save User     |    If user clicks the button, the input form sends input to the server. If one of input from the text field does not correspond to the requirements of the database (for example, data type), server returns an error and pop-up displays. Otherwise a new row adds to the User database. |
+| Text field | Username, Display Name, Phone, Email      |     |
+| Button |       |   Filter and order buttons. If pressed, filter the column or change the order direction.  |
